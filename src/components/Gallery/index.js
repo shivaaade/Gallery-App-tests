@@ -76,23 +76,15 @@ const intialimagesList = [
 // Write your code here.
 
 class Gallery extends Component {
-  state = {imgId: 0, imagesList: intialimagesList}
-
-  filteredFunction = () => {
-    const {imgId, imagesList} = this.state
-    const filterImg = imagesList.filter(each => imgId === each.id)
-    return filterImg
-  }
+  state = {imgId: intialimagesList[0].id}
 
   finalShowImage = id => {
-    const {imagesList} = this.state
-    const filterId = imagesList.filter(each => each.id === id)
-    this.setState({imgId: id, imagesList: filterId})
+    this.setState({imgId: id})
   }
 
   render() {
-    const filterImg = this.filteredFunction()
-    const {imageUrl, imageAltText} = filterImg[0]
+    const {imgId} = this.state
+    const {imageUrl, imageAltText} = intialimagesList[imgId]
 
     return (
       <div>

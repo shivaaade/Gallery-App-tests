@@ -10,7 +10,7 @@ const Welcome = props => {
 
   return (
     <li>
-      <button onClick={onClickShowImage}>
+      <button type="button" onClick={onClickShowImage}>
         <img src={thumbnailUrl} alt={thumbnailAltText} />
       </button>
     </li>
